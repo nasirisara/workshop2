@@ -1,7 +1,8 @@
 
 import { Route, Routes, Link } from "react-router-dom";
-
-
+import CrudDemo from './CrudDemo';
+import PersonDetails from './PersonDetails';
+import UpdatePerson from './UpdatePerson';
 
 const DemoRouter = () => {
 
@@ -12,7 +13,11 @@ const DemoRouter = () => {
         <Route exact path="/" element={<Welcome/>} />
             <Route path="/home" element={<Home/>} />
             <Route path="/person" element={<Person/>} />
+            <Route from="/contact" to=""/>
             <Route path="/about" element={<About/>} />
+            <Route path="/crud" element={<CrudDemo/>} />
+            <Route path="/details/:id" element={<PersonDetails/>} />
+            <Route path="/updates/:id" element={<UpdatePerson/>} />
             <Route path="/NotFound" element={<NotFound/>} />
         </Routes>
         </>
@@ -38,6 +43,9 @@ return (
                 </li>
                 <li className="nav-item">
                     <Link className="navbar-brand" to="/about">About Us</Link>
+                </li>
+                <li className="nav-item">
+                    <Link className="navbar-brand" to="/crud">CRUD</Link>
                 </li>
             </ul>
             <form>
